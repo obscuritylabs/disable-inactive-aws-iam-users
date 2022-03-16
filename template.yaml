@@ -33,7 +33,9 @@ Resources:
   DisableInactiveUsersFunction:
     Type: AWS::Serverless::Function 
     Properties:
-      CodeUri: inactiveawsusers/
+      CodeUri:
+        Bucket: inactiveawsusers
+        Key: deployment.zip
       Handler: main.lambda_handler
       Runtime: python3.6
       Timeout: 30
@@ -49,7 +51,7 @@ Resources:
               - "iam:ListUsers"
               - "iam:DeleteLoginProfile"
             Resource:
-              !Sub 'arn:aws:iam::${AWS::AccountId}:user/*'
+              !Sub 'arn:aws-us-gov:iam::${AWS::AccountId}:user/*'
       Events:
         CloudWatchEvent:
           Type: Schedule
