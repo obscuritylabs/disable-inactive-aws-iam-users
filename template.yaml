@@ -10,18 +10,18 @@ Metadata:
   AWS::ServerlessRepo::Application:
     Name: disabling-access-for-inactive-IAM-users
     Description: Disabling access for inactive IAM user.
-    Author: Ajaya Loya
+    Author: Daniel West
     SpdxLicenseId: Apache-2.0
     LicenseUrl: LICENSE
     ReadmeUrl: README.md
     Labels: ['lambda', 'sam', 'devops-made-easy', 'iam', 'security', 'leantaas'] 
-    HomePageUrl: https://github.com/devops-made-easy/inactive-aws-user
+    HomePageUrl: https://github.com/obscuritylabs/disable-inactive-aws-iam-users
     SemanticVersion: 1.0.0
-    SourceCodeUrl: https://github.com/devops-made-easy/inactive-aws-user
+    SourceCodeUrl: https://github.com/obscuritylabs/disable-inactive-aws-iam-users
 
 Parameters:
   NumberOfDays:
-    Default: 90
+    Default: 60
     Type: Number
     Description: Check if user is inactive for given number of days?
   WebhookUrl:
