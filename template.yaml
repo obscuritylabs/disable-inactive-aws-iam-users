@@ -33,7 +33,7 @@ Resources:
   DisableInactiveUsersFunction:
     Type: AWS::Serverless::Function 
     Properties:
-      CodeUri: inactive_aws_users/
+      CodeUri: inactiveawsusers/
       Handler: main.lambda_handler
       Runtime: python3.6
       Timeout: 30
